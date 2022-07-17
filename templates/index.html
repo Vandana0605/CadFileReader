@@ -1,0 +1,51 @@
+<style>
+    .bottom {
+    margin-top: 260px;
+    background: #000;
+}
+.btn-default {
+    color: #fff;
+    border-color: #2265b5;
+}
+.footer-copyright.text-center.py-3 {
+    color: #fff;
+}
+input[type="file"] {
+    text-align: center;
+    margin: auto;
+}
+.upload {
+    text-align: center;
+    height: 300px;
+    padding: 30px;
+    background-color: rgb(214, 224, 236);
+    width: 100%;
+    line-height: 5.3;
+}
+
+</style>
+{% extends "./base.html" %}
+
+{% block title %}
+    <title>File Upload</title>
+{% endblock%}
+{% block content %}
+<div>
+<form method="POST" class="post-form" enctype="multipart/form-data"> 
+ 
+    <div class="upload"> {% csrf_token %}
+        <h1>Upload File</h1>
+        <div>
+            <input type="file" name="documentttt[]" multiple >
+        </div>
+    <!-- <div style="float:right"> -->
+    <button type="submit" name="btnsub" class="save btn btn-default">Submit</button>  
+    </div>
+
+</div>
+</form>  
+</div>
+{% endblock %}
+
+
+
